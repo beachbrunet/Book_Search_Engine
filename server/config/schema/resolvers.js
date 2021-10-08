@@ -65,15 +65,17 @@ addUSer: async (parent, args)
     return { token, user };
   },
 // saving a book
-  saveBook: async () => {
-    if (context.user) {
-      const update = await User.findOneAndUpdate({ _id: context.user_id}),
-      
-      
-      );
-      return userData;
-  }
-  }
+    saveBook: async (bookData, context) => {
+      if (context.user) {
+        const update = await User.findOneAndUpdate(
+         { _id: context.user_id},
+         { $push: {savedBooks: bookData}},
+         {new: true,  runValidators: true }
+         );
+          console.log(update);
+          return update;
+        }
+      },
 
 
 
