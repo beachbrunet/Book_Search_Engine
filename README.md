@@ -89,6 +89,9 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 - [nodemon](https://www.npmjs.com/package/nodemon)<br />
   command-line: `npm i nodemon`<br />
 
+  - [Apollo](https://www.apollographql.com/docs/apollo-server/getting-started/)<br />
+    command-line: `npm install apollo-server graphql`<br />
+
 ## Learn more
 
 - [NoSQL](https://en.wikipedia.org/wiki/NoSQL)

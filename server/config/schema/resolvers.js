@@ -16,13 +16,30 @@ const resolver = {
     },
   },
 }
+
+
+// SearchBooks.js:
+// Use the Apollo useMutation() Hook to execute the SAVE_BOOK mutation in the handleSaveBook() function 
+// instead of the saveBook() function imported from the API file.
+// Make sure you keep the logic for saving the book's ID to state in the try...catch block!
+
+// SavedBooks.js:
+// Remove the useEffect() Hook that sets the state for UserData.
+// Instead, use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
+// Use the useMutation() Hook to execute the REMOVE_BOOK mutation in the handleDeleteBook() function instead of the deleteBook() function 
+// that's imported from API file. (Make sure you keep the removeBookId() function in place!)
+
+
 // Mutations
-// adding a user
-// Login
-// save book
+// adding a user -- Accepts a username, email, and password as parameters; returns an Auth type.
+// Login -- Accepts an email and password as parameters; returns an Auth type.
+// save book -- Accepts a book author's array, description, title, bookId, image, and link as parameters;
+//  returns a User type. (Look into creating what's known as an input type to handle all of these parameters!)
+
+
 
 Mutation: {
-// adding a user
+// adding a user me: Which returns a User type.
 addUSer: async (parent, args)
  => {
      const user = await User.create(args);
