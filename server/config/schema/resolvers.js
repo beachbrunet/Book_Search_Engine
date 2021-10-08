@@ -8,7 +8,7 @@ const resolver = {
   Query: {
     me:async (parent , args, contect) => {
         if (context.user) {
-            const userData = await User.findOne( { _id:: context.user_id}).select('-_v -password');
+            const userData = await User.findOne({ _id:: context.user_id}).select('-_v -password');
             return userData;
         }
         throw new AuthenticationError ('User not logged in');
