@@ -77,32 +77,26 @@ addUSer: async (parent, args)
         }
       },
   // remove book
-       removeBook: async (parent, {bookData}, context) => {
+       deleteBook: async (parent, {bookData}, context) => {
         if (context.user) {
-          const update = await User.findOneAndUpdate(
+          const removeBook = await User.findOneAndUpdate(
            { _id: context.user_id},
-           { $push: {savedBooks: bookData}},
+           { $pull: {savedBooks: {bookId}}},
            {new: true,  runValidators: true }
            );
-            console.log(update);
-            return update;
+           delete;
+           return;
           }
         },
-
-
-
-
-
-
-
-
+      };
 };
 
+// router.route('/').post(createUser).put(authMiddleware, saveBook);
 
+// router.route('/login').post(login);
 
+// router.route('/me').get(authMiddleware, getSingleUser);
 
-// example code
-
-
+// router.route('/books/:bookId').delete(authMiddleware, deleteBook);
 
 module.exports = resolvers;
