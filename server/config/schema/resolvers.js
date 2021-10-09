@@ -28,7 +28,7 @@ const { signToken } = require("../utils/auth");
 const resolver = {
     // me query
   Query: {
-    me: async (parent , args, contect) => {
+    me: async (parent , args, context) => {
         if (context.user) {
             const userData = await User.findOne({ _id: context.user_id}).select('-_v -password');
             return userData;
@@ -36,19 +36,17 @@ const resolver = {
         throw new AuthenticationError ('User not logged in');
     },
   },
-}
 
-
-
-Mutation: {
+  Mutation: {
 // adding a user me: Which returns a User type.
-addUSer: async (parent, args)
- => {
-     const user = await User.create(args);
-     const token = signToken(user);
+  addUser: async (parent, args)
+  => {
+       const user = await User.create(args);
+       const token = signToken(user);
 
-     return { token, user};
- }
+      return { token, user};
+    },
+
 //  login
  login: async (parent, { email, password }) => {
     const user = await User.findOne({ email });
@@ -84,11 +82,11 @@ addUSer: async (parent, args)
            { $pull: {savedBooks: {bookId}}},
            {new: true,  runValidators: true }
            );
-           delete;
-           return;
+           delete deleteBook;
+           return deleteBook;
           }
         },
-      };
+      },
 };
 
 // router.route('/').post(createUser).put(authMiddleware, saveBook);
