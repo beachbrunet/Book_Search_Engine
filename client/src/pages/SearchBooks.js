@@ -21,6 +21,7 @@ import { saveBook, searchGoogleBooks } from "../utils/API";
 // add here
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_BOOK } from "../utils/mutations";
+import { saveBookIds } from "../utils/localStorage";
 
 const SearchBooks = () => {
   // create state for holding returned google api data
@@ -81,21 +82,22 @@ const SearchBooks = () => {
       return false;
     }
 
-          // add here
-      try {
-        console.log(bookToSave);
-        console.log(searchedBooks);
-        const{ data } = await saveBook({
-          variables:{
-            ...bookToSave
-          }
-        })
-
-
-
-
- }
-
+    // add here
+    try {
+      console.log(bookToSave);
+      console.log(searchedBooks);
+      const { data } = await saveBook({
+        variables: {
+          ...bookToSave,
+        },
+      });
+      setSavedBooksId([...saveBookIds, bookToSave.bookId]);
+      console.log(savedBookIds);
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   //   try {
   //     const response = await saveBook(bookToSave, token);
