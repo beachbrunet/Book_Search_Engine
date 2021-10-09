@@ -1,4 +1,4 @@
-// Instructions
+//
 // Remove the useEffect() Hook that sets the state for UserData.
 // Instead, use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
 // Use the useMutation() Hook to execute the REMOVE_BOOK mutation in the handleDeleteBook() function instead of the deleteBook() function
@@ -60,7 +60,7 @@ const SavedBooks = () => {
     if (!token) {
       return false;
     }
-    // Make sure you keep the logic for saving the book's ID to state in the try...catch block!
+
     try {
       const response = await deleteBook(bookId, token);
 
