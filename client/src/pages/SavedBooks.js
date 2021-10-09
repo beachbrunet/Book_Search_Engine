@@ -1,3 +1,9 @@
+// Instructions
+// Remove the useEffect() Hook that sets the state for UserData.
+// Instead, use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
+// Use the useMutation() Hook to execute the REMOVE_BOOK mutation in the handleDeleteBook() function instead of the deleteBook() function
+// that's imported from API file. (Make sure you keep the removeBookId() function in place!)
+
 import React, { useState, useEffect } from "react";
 import {
   Jumbotron,
@@ -11,6 +17,10 @@ import { getMe, deleteBook } from "../utils/API";
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
 // add import for quiries, mutation, and apollo
+import { useMutation } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/client";
+import { GET_ME } from "../utils/queries";
+import { REMOVE_BOOK } from "../utils/mutations";
 
 const SavedBooks = () => {
   const [userData, setUserData] = useState({});
