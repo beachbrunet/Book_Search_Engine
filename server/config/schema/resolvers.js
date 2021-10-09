@@ -14,11 +14,10 @@
 // adding a user -- Accepts a username, email, and password as parameters; returns an Auth type.
 // Login -- Accepts an email and password as parameters; returns an Auth type.
 // save book -- Accepts a book author's array, description, title, bookId, image, and link as parameters;
-//  returns a User type. (Look into creating what's known as an input type to handle all of these parameters!)
+// returns a User type. (Look into creating what's known as an input type to handle all of these parameters!)
 // removeBook: Accepts a book's bookId as a parameter; returns a User type.
 
-
-
+// refs https://www.apollographql.com/docs/react/data/mutations/
 
 // apollo server/ resolver here
 const { AuthenticationError } = require("apollo-server-express");
@@ -50,6 +49,7 @@ addUSer: async (parent, args)
 
      return { token, user};
  }
+//  login
  login: async (parent, { email, password }) => {
     const user = await User.findOne({ email });
     
@@ -65,7 +65,7 @@ addUSer: async (parent, args)
     return { token, user };
   },
 // saving a book
-    saveBook: async (bookData, context) => {
+    saveBook: async (parent, {bookData}, context) => {
       if (context.user) {
         const update = await User.findOneAndUpdate(
          { _id: context.user_id},
@@ -76,9 +76,18 @@ addUSer: async (parent, args)
           return update;
         }
       },
-
-
-
+  // remove book
+       removeBook: async (parent, {bookData}, context) => {
+        if (context.user) {
+          const update = await User.findOneAndUpdate(
+           { _id: context.user_id},
+           { $push: {savedBooks: bookData}},
+           {new: true,  runValidators: true }
+           );
+            console.log(update);
+            return update;
+          }
+        },
 
 
 

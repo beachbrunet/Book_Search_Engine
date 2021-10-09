@@ -3,14 +3,14 @@
 const express = require("express");
 const path = require("path");
 const { ApolloServer } = require("apollo-server-express");
-const routes = require("./routes");
 // need to import Defs and resolvers
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
+// Proxy error: Could not proxy request /static/js/vendors~main.chunk.js from localhost:3000 to http://localhost:3001.
 
 const server = new ApolloServer({
   typeDefs,
