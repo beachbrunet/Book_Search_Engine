@@ -60,7 +60,7 @@ const SavedBooks = () => {
     if (!token) {
       return false;
     }
-
+    // Make sure you keep the logic for saving the book's ID to state in the try...catch block!
     try {
       const response = await deleteBook(bookId, token);
 

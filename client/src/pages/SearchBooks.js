@@ -95,11 +95,18 @@ const SearchBooks = () => {
     }
   };
   // Add here
-  // try {
-  //   const reponse = await saveBook(book)
-  // }
-  //
-
+  try {
+    const reponse = await saveBook(bookToSave, token);
+ const {data} = await saveBook ({
+   variables: {input: bookToSave}
+ });
+//  if book saves to users account sve book id to state
+setSavedBookIds([...savedBookIds, booktoSave.bookId]);
+  } catch (err) {
+    console.error(err);
+  }
+  };
+  
   return (
     <>
       <Jumbotron fluid className="text-light bg-dark">
