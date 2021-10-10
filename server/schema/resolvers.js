@@ -25,7 +25,7 @@ const { User, Book } = require("../models");
 const { signToken } = require("../utils/auth");
 
 // example 23 outline
-const resolver = {
+const resolvers = {
     // me query
   Query: {
     me: async (parent , args, context) => {
@@ -39,16 +39,14 @@ const resolver = {
 
   Mutation: {
 // adding a user me: Which returns a User type.
-  addUser: async (parent, args)
-  => {
-       const user = await User.create(args);
-       const token = signToken(user);
-
+  addUser: async (parent, {username, email, password}) => {
+       const user = await User.create({username, email, password});
+      //  const token = signToken(user);
       return { token, user};
     },
 
 //  login
- login: async (parent, { email, password }) => {
+ login: async (parent, { email, password }, token) => {
     const user = await User.findOne({ email });
     
     if(!user) {
@@ -59,7 +57,7 @@ const resolver = {
     if (!correctPw) {
       throw new AuthenticationError('Incorrect credentials');
     }
-    const token = signToken(user);
+    // const token = signToken(user);
     return { token, user };
   },
 // saving a book
