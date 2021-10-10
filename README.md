@@ -80,29 +80,14 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 <!-- ----------------------- -->
 
-- [Mongoose](https://www.npmjs.com/package/mongoose)<br />
-  command-line: `npm i mongoose`<br />
+- [Apollo](https://www.apollographql.com/docs/apollo-server/getting-started/)<br />
+  command-line: `npm install apollo-server graphql`<br />
 
-- [Morgan](https://www.npmjs.com/package/morgan)<br />
-  command-line: `npm i morgan`<br />
-
-- [nodemon](https://www.npmjs.com/package/nodemon)<br />
-  command-line: `npm i nodemon`<br />
+  - [Apollo-Client](https://www.npmjs.com/package/apollo-client)<br />
+    command-line: `npm i apollo-client`<br />
 
   - [Apollo](https://www.apollographql.com/docs/apollo-server/getting-started/)<br />
     command-line: `npm install apollo-server graphql`<br />
-
-## Learn more
-
-- [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
-- [MongoDB Website](https://www.mongodb.com/)
-- [Robo 3T Website](https://robomongo.org/download)
-- [MongoJS Documentation](https://www.npmjs.com/package/mongojs)
-- [Mongoose Documentation](http://mongoosejs.com/docs/guide.html)
-- [routes on Node.js and MongoDB](https://www.geeksforgeeks.org/restfull-routes-on-node-js-and-mongodb/)
-- [Request Reponse](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas).
-
-## Heroku
 
 <!-- ----------------------- -->
 
@@ -112,7 +97,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 <!-- ----------------------- -->
 
-[URL to the github repo](https://github.com)
+[URL to the github repo](https://github.com/beachbrunet/Book_Search_Engine)
 
 ## Contributions and Contact Information
 
