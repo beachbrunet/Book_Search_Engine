@@ -16,7 +16,7 @@ import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
 
 // add here
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
