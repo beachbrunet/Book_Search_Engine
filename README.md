@@ -58,23 +58,15 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 <!-- ----------------------- -->
 
-- Apollo Server
-- Graph QL API
-- Mongoose
-- MongoDB
-- Express
-- Morgan
-- Node.js
-- JavaScript
-- HTML
-- CSS
+- Apollo
+- React
+- and the basic knowledge of coding
 
 ## Screenshot
 
 <!-- ----------------------- -->
 
-![Screen Shot](./assets/#.png)
-![Screen Shot](./assets/#.png)
+![Screen Shot](ScreenShot.png)
 
 ## Dependancies
 
@@ -83,15 +75,18 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 - [Apollo](https://www.apollographql.com/docs/apollo-server/getting-started/)<br />
   command-line: `npm install apollo-server graphql`<br />
 
-  - [Apollo-Client](https://www.npmjs.com/package/apollo-client)<br />
-    command-line: `npm i apollo-client`<br />
+- [Apollo-Client](https://www.npmjs.com/package/apollo-client)<br />
+  command-line: `npm i apollo-client`<br />
 
-  - [Apollo](https://www.apollographql.com/docs/apollo-server/getting-started/)<br />
-    command-line: `npm install apollo-server graphql`<br />
+- [Apollo](https://www.apollographql.com/docs/apollo-server/getting-started/)<br />
+  command-line: `npm install apollo-server graphql`<br />
+
+## Helpful Links
+
+[Create React App](https://create-react-app.dev/docs/getting-started/),
+[Getting started Apollo Client](https://www.apollographql.com/docs/react/get-started/)
 
 <!-- ----------------------- -->
-
-[Heroku](https://something.herokuapp.com)
 
 ## Application
 
