@@ -20,7 +20,7 @@ import { saveBook, searchGoogleBooks } from "../utils/API";
 
 // add here
 import { useMutation } from "@apollo/client";
-import { SAVE_BOOK } from "../utils/mutations";
+import { SAVE_BOOK } from "../utils/mutation";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 
 const SearchBooks = () => {
@@ -96,7 +96,7 @@ const SearchBooks = () => {
         throw new Error("something went wrong!");
       }
 
-      setSavedBooksId([...saveBookIds, bookToSave.bookId]);
+      setSavedBookIds([...saveBookIds, bookToSave.bookId]);
       // console.log(savedBookIds);
       // console.log(data);
     } catch (err) {
