@@ -84,35 +84,24 @@ const SearchBooks = () => {
 
     // add here
     try {
-      console.log(bookToSave);
-      console.log(searchedBooks);
+      // console.log(bookToSave);
+      // console.log(searchedBooks);
       const { data } = await saveBook({
         variables: {
-          ...bookToSave,
+          bookData: { ...bookToSave },
         },
       });
+      if (!data || error) {
+        throw new Error("something went wrong!");
+      }
+
       setSavedBooksId([...saveBookIds, bookToSave.bookId]);
-      console.log(savedBookIds);
-      console.log(data);
+      // console.log(savedBookIds);
+      // console.log(data);
     } catch (err) {
       console.error(err);
     }
   };
-
-  //   try {
-  //     const response = await saveBook(bookToSave, token);
-
-  //     if (!response.ok) {
-  //       throw new Error("something went wrong!");
-  //     }
-
-  //     // if book successfully saves to user's account, save book id to state
-  //     setSavedBookIds([...savedBookIds, bookToSave.bookId]);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
   return (
     <>
       <Jumbotron fluid className="text-light bg-dark">
