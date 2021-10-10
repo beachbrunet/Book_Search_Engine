@@ -6,7 +6,16 @@ import "./index.css";
 import App from "./App";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const apolloUri =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000/graphql"
+    : "Heroku";
+
+//from the website
+const client = new ApolloClient({
+  uri: apolloUri,
+  cache: new InMemoryCache(),
+});
 
 // The `listen` method launches a web server.
 server.listen().then(({ url }) => {
