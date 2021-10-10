@@ -1,6 +1,8 @@
 // types here
 // define the query we want to execute by wrapping it in the gql template literal:
-const { gql } = require("apollo-server-express");
+const { gql } = require("apollo-server");
+// const { ApolloServer, gql } = require("apollo-server");
+
 const typeDefs = gql`
   type User {
     _id: ID

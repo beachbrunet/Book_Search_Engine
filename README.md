@@ -81,6 +81,12 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 - [Apollo](https://www.apollographql.com/docs/apollo-server/getting-started/)<br />
   command-line: `npm install apollo-server graphql`<br />
 
+- [Apollo-server](https://www.npmjs.com/package/apollo-server)<br />
+  command-line: `npm i apollo-server`<br />
+
+- [GraphQL](https://www.npmjs.com/package/graphql)<br />
+  command-line: `npm i graphql`<br />
+
 ## Helpful Links
 
 [Create React App](https://create-react-app.dev/docs/getting-started/),
