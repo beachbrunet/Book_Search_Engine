@@ -22,7 +22,7 @@
 // apollo server/ resolver here
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Book } = require("../models");
-const { signToken } = require("../utils/auth");
+// const { signToken } = require("../utils/auth");
 
 // example 23 outline
 const resolvers = {

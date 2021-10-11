@@ -15,9 +15,10 @@ const PORT = process.env.PORT || 3001;
 // Proxy error: Could not proxy request /static/js/vendors~main.chunk.js from localhost:3000 to http://localhost:3001.
 // console.log(typeDefs);
 const server = new ApolloServer({
+  introspection: true,
   typeDefs: schema.typeDefs,
   resolvers: schema.resolvers,
-  context: authMiddleware,
+  // context: authMiddleware,
 });
 
 // Add middleware
@@ -35,6 +36,8 @@ server.start().then(() => {
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
   });
+
+  app.use(routes);
 
   db.once("open", () => {
     app.listen(PORT, () => {

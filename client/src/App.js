@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: " SERVER IS",
+  uri: " SERVER IS ",
   cache: new InMemoryCache(),
 });
 

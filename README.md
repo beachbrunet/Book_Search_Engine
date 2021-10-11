@@ -89,9 +89,15 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Helpful Links
 
-[Create React App](https://create-react-app.dev/docs/getting-started/),
+[Create React App](https://create-react-app.dev/docs/getting-started/)
 [Getting started Apollo Client](https://www.apollographql.com/docs/react/get-started/)
+[GraphQl](https://graphql.org/learn/)
 
+## Heroku
+
+[Heroku]()
+
+<!-- fierce-ocean-86529 -->
 <!-- ----------------------- -->
 
 ## Application
