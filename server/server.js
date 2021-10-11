@@ -11,7 +11,7 @@ const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
 console.log(schema);
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 // Proxy error: Could not proxy request /static/js/vendors~main.chunk.js from localhost:3000 to http://localhost:3001.
 // console.log(typeDefs);
 const server = new ApolloServer({
