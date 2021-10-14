@@ -42,7 +42,7 @@ const resolvers = {
   addUser: async (parent, {username, email, password}) => {
        const user = await User.create({username, email, password});
       //  const token = signToken(user);
-      return { token, user};
+      return { user};
     },
 
 //  login
@@ -87,12 +87,5 @@ const resolvers = {
       },
 };
 
-// router.route('/').post(createUser).put(authMiddleware, saveBook);
-
-// router.route('/login').post(login);
-
-// router.route('/me').get(authMiddleware, getSingleUser);
-
-// router.route('/books/:bookId').delete(authMiddleware, deleteBook);
 
 module.exports = resolvers;
