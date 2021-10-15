@@ -17,9 +17,13 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// HERE IS THE CONSOLE BUG?
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ApolloProvider client={client}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+    ,
+  </ApolloProvider>,
   document.getElementById("root")
 );
