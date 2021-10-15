@@ -87,6 +87,9 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 - [GraphQL](https://www.npmjs.com/package/graphql)<br />
   command-line: `npm i graphql`<br />
 
+- [node.bcrypt.js](https://www.npmjs.com/package/bcrypt),
+  command-line: `npm i bcrypt`<br />
+
 ## Helpful Links
 
 [Create React App](https://create-react-app.dev/docs/getting-started/)
