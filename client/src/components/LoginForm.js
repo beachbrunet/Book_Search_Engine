@@ -11,13 +11,13 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  // add mutation login here
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
-  // add mutation login here
-  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -30,32 +30,36 @@ const LoginForm = () => {
     }
 
     try {
-      console.log(userFormData);
+      // console.log(userFormData);
       const { data } = await login({
         variables: { ...userFormData },
       });
       // const response = await LOGIN_USER({ userFormData });
       // const response = await login(userFormData);
 
-      console.log("data, possibly null ", data);
+      // console.log("data, possibly null ", data);
 
-      if (!data) {
-        throw new Error("something went wrong!");
-      }
-
-      if (error) {
-        console.error(error);
-        setShowAlert(true);
-        return;
-      }
-
-      // const { token, user } = await response.json();
-      console.log("data: ", data);
-      Auth.login(data.login.token);
+      // if (!data) {
+      //   throw new Error("something went wrong!");
+      // }
+      Auth.login(data.loginUser.token);
     } catch (err) {
       console.error(err);
-      setShowAlert(true);
     }
+
+    //   if (error) {
+    //     console.error(error);
+    //     setShowAlert(true);
+    //     return;
+    //   }
+
+    //   // const { token, user } = await response.json();
+    //   console.log("data: ", data);
+    //   Auth.login(data.login.token);
+    // } catch (err) {
+    //   console.error(err);
+    //   setShowAlert(true);
+    // }
 
     setUserFormData({
       username: "",
