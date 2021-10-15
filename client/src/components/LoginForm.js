@@ -39,27 +39,23 @@ const LoginForm = () => {
 
       // console.log("data, possibly null ", data);
 
-      // if (!data) {
-      //   throw new Error("something went wrong!");
-      // }
-      Auth.login(data.loginUser.token);
+      if (!data) {
+        throw new Error("something went wrong!");
+      }
+
+      if (error) {
+        console.error(error);
+        setShowAlert(true);
+        return;
+      }
+
+      // const { token, user } = await response.json();
+      console.log("data: ", data);
+      Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
+      setShowAlert(true);
     }
-
-    //   if (error) {
-    //     console.error(error);
-    //     setShowAlert(true);
-    //     return;
-    //   }
-
-    //   // const { token, user } = await response.json();
-    //   console.log("data: ", data);
-    //   Auth.login(data.login.token);
-    // } catch (err) {
-    //   console.error(err);
-    //   setShowAlert(true);
-    // }
 
     setUserFormData({
       username: "",
