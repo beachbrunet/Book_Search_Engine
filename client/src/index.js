@@ -6,10 +6,11 @@ import "./index.css";
 import App from "./App";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+// fixed index via feedback
 const apolloUri =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3001/graphql"
-    : "Heroku";
+    : "/graphql";
 
 //from the website
 const client = new ApolloClient({
