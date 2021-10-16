@@ -61,19 +61,19 @@ const resolvers = {
     return { user, token };
   },
 // saving a book (users: username, email, _id)
-    saveBook: async (parent, {bookData}, context) => {
-      console.log(bookData);
+    saveBook: async (parent, bookData, context) => {
+      // console.log(bookData);
       if (context.user) {
         const update = await User.findOneAndUpdate(
          { _id: context.user._id},
          { $push: {savedBooks: bookData}},
          {new: true,  runValidators: true }
          );
-          console.log(update);
+          // console.log(update);
           return update;
         }
       },
-  // remove book
+  // remove book ---not being used
        deleteBook: async (parent, {bookData}, context) => {
         if (context.user) {
           const removeBook = await User.findOneAndUpdate(
