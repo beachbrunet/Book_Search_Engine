@@ -6,7 +6,7 @@ import "./index.css";
 import App from "./App";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-// fixed index via feedback
+// fixed index via feedback had the wrong thingy
 const apolloUri =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3001/graphql"
