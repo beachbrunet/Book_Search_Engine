@@ -18,7 +18,7 @@ const server = new ApolloServer({
   introspection: true,
   typeDefs: schema.typeDefs,
   resolvers: schema.resolvers,
-  // context: authMiddleware,
+  context: authMiddleware,
 });
 
 // Add middleware

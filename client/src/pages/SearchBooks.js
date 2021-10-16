@@ -16,7 +16,7 @@ import {
 } from "react-bootstrap";
 
 import Auth from "../utils/auth";
-import { saveBook, searchGoogleBooks } from "../utils/API";
+import { searchGoogleBooks } from "../utils/API";
 
 // add here
 import { useMutation } from "@apollo/client";
@@ -84,14 +84,14 @@ const SearchBooks = () => {
       // console.log(searchedBooks);
       const { data } = await saveBook({
         variables: {
-          bookData: { ...bookToSave },
+          ...bookToSave,
         },
       });
       if (!data || error) {
         throw new Error("something went wrong!");
       }
 
-      setSavedBookIds([...saveBookIds, bookToSave.bookId]);
+      // setSavedBookIds([...saveBookIds, bookToSave.bookId]);
       // console.log(savedBookIds);
       // console.log(data);
     } catch (err) {

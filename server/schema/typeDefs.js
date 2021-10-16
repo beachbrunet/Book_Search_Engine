@@ -37,11 +37,11 @@ const typeDefs = gql`
     saveBook(
       authors: [String]
       description: String
-      bookId: Int!
+      bookId: String!
       image: String
       link: String
       title: String!
-    ): User
+    ): Book
     deleteBook(bookId: ID!): User
   }
 `;

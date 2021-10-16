@@ -30,7 +30,7 @@ const resolvers = {
   Query: {
     me: async (parent , args, context) => {
         if (context.user) {
-            const userData = await User.findOne({ _id: context.user_id}).select('-_v -password');
+            const userData = await User.findOne({ _id: context.user_id}).populate("savedBooks");
             return userData;
         }
         throw new AuthenticationError ('User not logged in');
@@ -62,6 +62,7 @@ const resolvers = {
   },
 // saving a book
     saveBook: async (parent, {bookData}, context) => {
+      console.log(context);
       if (context.user) {
         const update = await User.findOneAndUpdate(
          { _id: context.user_id},
