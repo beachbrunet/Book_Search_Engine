@@ -48,8 +48,7 @@ const LoginForm = () => {
         setShowAlert(true);
         return;
       }
-
-      // const { token, user } = await response.json();
+      debugger;
       console.log("data: ", data);
       Auth.login(data.login.token);
     } catch (err) {
